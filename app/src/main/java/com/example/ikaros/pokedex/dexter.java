@@ -2,9 +2,11 @@ package com.example.ikaros.pokedex;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 
 
@@ -34,5 +36,10 @@ public class dexter extends ListActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void entrar(View v){
+        Intent i = new Intent(this, Pokedex.class);
+        startActivity(i);
     }
 }
