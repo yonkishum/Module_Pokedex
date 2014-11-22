@@ -14,11 +14,6 @@ public class dexter extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dexter);
-
-	    String[] pokebase = getResources().getStringArray(R.array.name);
-
-	    this.setListAdapter(new ArrayAdapter<String>(this,R.layout.pokemon, pokebase));
-
     }
 
 
