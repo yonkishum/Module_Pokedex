@@ -2,18 +2,17 @@ package com.example.ikaros.pokedex;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.example.ikaros.pokedex.R;
+import android.widget.Toast;
 
 public class Pokedex extends Activity {
 
@@ -65,14 +64,12 @@ public class Pokedex extends Activity {
 
         list.setAdapter(adapter);
 
-        /*list.setOnClickListener(new View.OnClickListener() {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Dexter_avanzado.class);
-                startActivity(i);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getBaseContext(),"Pokemon Seleccionado",Toast.LENGTH_SHORT).show();
             }
-        });*/
-
+        });
     }
 
     private class PokeAdapter extends ArrayAdapter<String>{
