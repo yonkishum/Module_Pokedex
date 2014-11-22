@@ -20,6 +20,10 @@
             android:name=".Pokedex"
             android:label="@string/pokedex" >
         </activity>
+        <activity
+            android:name=".Dexter_avanzado"
+            android:label="@string/title_activity_dexter_avanzado" >
+        </activity>
     </application>
 
 </manifest>
