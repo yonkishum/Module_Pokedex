@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 
 
-public class dexter extends ListActivity {
+public class dexter extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class dexter extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void entrar(View v){
+    public void entrar(View view){
         Intent i = new Intent(this, Pokedex.class);
         startActivity(i);
     }
