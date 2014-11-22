@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Bienvenido al Pokedex"
-        android:id="@+id/textView"
+        android:id="@+id/numero"
         android:layout_marginTop="39dp"
         android:layout_below="@+id/imageButton"
         android:layout_centerHorizontal="true"/>
