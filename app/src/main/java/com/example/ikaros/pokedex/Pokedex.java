@@ -65,6 +65,7 @@ public class Pokedex extends Activity {
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getBaseContext(),"Pokemon Seleccionado",Toast.LENGTH_SHORT).show();
