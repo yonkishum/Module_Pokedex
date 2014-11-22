@@ -1,11 +1,17 @@
 package com.example.ikaros.pokedex;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
-/**
- * Created by Yiquishum on 22/11/2014.
- */
 public class Pokedex extends Activity {
 
     ListView list;
@@ -30,4 +36,52 @@ public class Pokedex extends Activity {
                        R.drawable.p001,R.drawable.p001,R.drawable.p001,R.drawable.p001,R.drawable.p001,
                        R.drawable.p001,R.drawable.p001,R.drawable.p001,R.drawable.p001,R.drawable.p001,
                        R.drawable.p001,R.drawable.p001,R.drawable.p001,R.drawable.p001,R.drawable.p001};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.pokemon);
+
+        Resources res = getResources();
+        nombres = res.getStringArray(R.array.name);
+
+        list = (ListView) findViewById(R.id.PokedexList);
+
+        PokeAdapter adapter = new PokeAdapter(this, nombres, sprites);
+
+        list.setAdapter(adapter);
+    }
+
+    private class PokeAdapter extends ArrayAdapter<String>{
+
+        Context context;
+        int[] sprite;
+        String[] poken;
+
+        PokeAdapter(Context c, String[] namae, int[] pics){
+
+            super(c, R.layout.pokemon, R.id.napo, namae);
+
+            this.context = c;
+            this.sprite = pics;
+            this.poken = namae;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = inflater.inflate(R.layout.pokemon, parent, false);
+
+            ImageView pokemonS = (ImageView) row.findViewById(R.id.fopo);
+            TextView pokemonN = (TextView) row.findViewById(R.id.napo);
+
+            pokemonS.setImageResource(sprite[position]);
+            pokemonN.setText(poken[position]);
+
+            return row;
+        }
+    }
 }
+
+
